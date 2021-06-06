@@ -18,11 +18,6 @@ echo root:password | chpasswd
 sudo reflector -c Brazil -a 12 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -Syy
 
-pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si --noconfirm
-
 pacman -S --noconfirm grub \
     efibootmgr \
     networkmanager \
@@ -64,12 +59,11 @@ pacman -S --noconfirm grub \
     gnupg \
     broadcom-wl \
     zsh \
-    tmux
+    tmux \
+    stow
 
 # pacman -S --noconfirm xf86-video-amdgpu
 pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
-
-yay -S --noconfirm neovim-nightly-bin xclip python-pynvim-git
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

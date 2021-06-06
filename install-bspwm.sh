@@ -3,11 +3,17 @@
 sudo timedatectl set-ntp true
 sudo hwclock --systohc
 
+pacman -S --noconfirm --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+
 yay -S --noconfirm lightdm-settings
 yay -S --noconfirm polybar
 yay -S --noconfirm nerd-fonts-iosevka
 yay -S --noconfirm ttf-icomoon-feather
 yay -S --noconfirm spotify
+yay -S --noconfirm neovim-nightly-bin xclip python-pynvim-git
 
 echo "MAIN PACKAGES"
 
