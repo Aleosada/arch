@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 ln -sf /usr/share/zoneinfo/Brazil/East /etc/localtime
 sudo timedatectl set-ntp true
 hwclock --systohc
