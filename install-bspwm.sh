@@ -7,6 +7,7 @@ yay -S --noconfirm lightdm-settings
 yay -S --noconfirm polybar
 yay -S --noconfirm nerd-fonts-iosevka
 yay -S --noconfirm ttf-icomoon-feather
+yay -S --noconfirm spotify
 
 echo "MAIN PACKAGES"
 
@@ -39,9 +40,6 @@ sudo pacman -S --noconfirm xorg \
     scrot \
     dunst \
     pacman-contrib
-
-#sudo flatpak install -y spotify
-#sudo flatpak install -y kdenlive
 
 sudo systemctl enable lightdm
 
