@@ -3,6 +3,7 @@
 sudo timedatectl set-ntp true
 sudo hwclock --systohc
 
+sudo reflector -c Brazil -a 12 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -S --noconfirm --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -39,7 +40,6 @@ sudo pacman -S --noconfirm xorg \
     arc-gtk-theme \
     arc-icon-theme \
     vlc \
-    dina-font tamsyn-font bdf-unifont ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid gnu-free-fonts ttf-ibm-plex ttf-liberation ttf-linux-libertine noto-fonts font-bh-ttf ttf-roboto tex-gyre-fonts ttf-ubuntu-font-family ttf-anonymous-pro ttf-cascadia-code ttf-fantasque-sans-mono ttf-fira-mono ttf-hack ttf-fira-code ttf-inconsolata ttf-jetbrains-mono ttf-monofur adobe-source-code-pro-fonts cantarell-fonts inter-font ttf-opensans gentium-plus-font ttf-junicode adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk noto-fonts-emoji ttf-font-awesome awesome-terminal-fonts \
     archlinux-wallpaper \
     rofi \
     playerctl \
@@ -47,9 +47,16 @@ sudo pacman -S --noconfirm xorg \
     dunst \
     pacman-contrib
 
+sudo pacman -S --noconfirm dina-font tamsyn-font bdf-unifont ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid gnu-free-fonts ttf-ibm-plex ttf-liberation ttf-linux-libertine noto-fonts ttf-roboto tex-gyre-fonts ttf-ubuntu-font-family ttf-anonymous-pro ttf-cascadia-code ttf-fantasque-sans-mono ttf-fira-mono ttf-hack ttf-fira-code ttf-inconsolata ttf-jetbrains-mono ttf-monofur adobe-source-code-pro-fonts cantarell-fonts inter-font ttf-opensans gentium-plus-font ttf-junicode adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk noto-fonts-emoji ttf-font-awesome awesome-terminal-fonts \
+
+yay -S --noconfirm lightdm-webkit-theme-aether
+
+# Set default lightdm greeter to lightdm-webkit2-greeter
+# sudo sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf
+
 sudo systemctl enable lightdm
 
-mkdir -p .config/{bspwm,sxhkd,dunst}
+mkdir -p ~/.config/{bspwm,sxhkd,dunst}
 
 install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
 install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
