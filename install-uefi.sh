@@ -36,10 +36,6 @@ pacman -S --noconfirm grub \
     inetutils \
     dnsutils \
     alsa-utils \
-    pipewire \
-    pipewire-alsa \
-    pipewire-pulse \
-    pipewire-jack \
     bash-completion \
     openssh \
     rsync \
