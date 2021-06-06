@@ -49,14 +49,12 @@ pacman -S --noconfirm grub \
     bridge-utils \
     vde2 \
     openbsd-netcat \
-    iptables-nft \
     ipset \
     firewalld \
     os-prober \
     ntfs-3g \
     terminus-font \
-    gpg \
-    openssl \
+    gnupg \
     broadcom-wl
 
 # pacman -S --noconfirm xf86-video-amdgpu
@@ -66,11 +64,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
-# systemctl enable bluetooth
-# systemctl enable cups.service
-# systemctl enable sshd
-# systemctl enable avahi-daemon
-# systemctl enable tlp # You can comment this command out if you didn't install tlp, see above
+systemctl enable avahi-daemon
 systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable libvirtd
