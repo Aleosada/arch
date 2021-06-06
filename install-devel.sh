@@ -14,4 +14,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 yay -S --noconfirm nvm
 echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc
+source /usr/share/nvm/init-nvm.sh
+nvm install --lts
+
 yay -S --noconfirm docker
