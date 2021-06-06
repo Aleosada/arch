@@ -78,7 +78,7 @@ systemctl enable acpid
 
 useradd -m aleosada
 # echo ermanno:password | chpasswd
-chpasswd aleosada
+# chpasswd aleosada
 usermod -aG libvirt aleosada
 
 echo "aleosada ALL=(ALL) ALL" >> /etc/sudoers.d/aleosada
