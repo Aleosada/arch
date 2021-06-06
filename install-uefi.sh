@@ -1,6 +1,8 @@
 #!/bin/bash
 
+
 ln -sf /usr/share/zoneinfo/Brazil/East /etc/localtime
+sudo timedatectl set-ntp true
 hwclock --systohc
 sed -i '177s/.//' /etc/locale.gen
 sed -i '393/.//' /etc/locale.gen
@@ -11,10 +13,15 @@ echo "arch" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
-#echo root:password | chpasswd
-# Change root password manually
+echo root:password | chpasswd
 
-# You can remove the tlp package if you are installing on a desktop or vm
+sudo reflector -c Brazil -a 12 --sort rate --save /etc/pacman.d/mirrorlist
+sudo pacman -Syy
+
+pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
 
 pacman -S --noconfirm grub \
     efibootmgr \
@@ -55,10 +62,14 @@ pacman -S --noconfirm grub \
     ntfs-3g \
     terminus-font \
     gnupg \
-    broadcom-wl
+    broadcom-wl \
+    zsh \
+    tmux
 
 # pacman -S --noconfirm xf86-video-amdgpu
 pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
+
+yay -S --noconfirm neovim-nightly-bin xclip python-pynvim-git
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -72,8 +83,7 @@ systemctl enable firewalld
 systemctl enable acpid
 
 useradd -m aleosada
-# echo ermanno:password | chpasswd
-# chpasswd aleosada
+echo aloesada:password | chpasswd
 usermod -aG libvirt aleosada
 
 echo "aleosada ALL=(ALL) ALL" >> /etc/sudoers.d/aleosada
