@@ -3,7 +3,7 @@
 sudo timedatectl set-ntp true
 sudo hwclock --systohc
 
-sudo reflector -c Brazil -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+# sudo reflector -c Brazil -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S --noconfirm --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -61,7 +61,7 @@ mkdir -p ~/.config/{bspwm,sxhkd,dunst}
 install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
 install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
-git clone https://github.com/Aleosada/dotfiles.git $HOME/.dotfiles
+git clone https://github.com/Aleosada/.dotfiles.git $HOME/.dotfiles
 cd $HOME/.dotfiles
 stow -vt ~ git
 stow -vt ~ tmux
