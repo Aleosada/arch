@@ -1,12 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/Aleosada/dotfiles.git $HOME/.dotfiles
 cd $HOME/.dotfiles
-stow -vt ~ git
-stow -vt ~ tmux
-stow -vt ~ bspwm
-stow -vt ~ sxhkd
-stow -vt ~ polybar
 stow -vt ~ nvim
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
