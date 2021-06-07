@@ -8,6 +8,7 @@ sudo pacman -S --noconfirm --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
+cd ..
 
 # yay -S --noconfirm lightdm-settings
 yay -S --noconfirm polybar
@@ -56,17 +57,34 @@ yay -S --noconfirm lightdm-webkit-theme-aether
 
 sudo systemctl enable lightdm
 
-mkdir -p ~/.config/{bspwm,sxhkd,dunst}
+# mkdir -p ~/.config/{bspwm,sxhkd,dunst}
 
-install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
-install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
+# install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
+# install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
+
+git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+cd polybar-themes
+chmod +x setup.sh
+./setup.sh
 
 git clone https://github.com/Aleosada/.dotfiles.git $HOME/.dotfiles
 cd $HOME/.dotfiles
 stow -vt ~ git
 stow -vt ~ tmux
+rm ~/.config/bspwm
+rm ~/.config/sxhkd
 stow -vt ~ bspwm
-stow -vt ~ sxhkd
+stow -vt ~ bspwm
+rm ~/.config/polybar
 stow -vt ~ polybar
 
-printf "\e[1;32mCHANGE NECESSARY FILES BEFORE REBOOT\e[0m"
+rm ~/.zshrc
+rm ~/.p10k
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+stow -vt ~ zsh
+
+Printf "\e[1;32mCHANGE NECESSARY FILES BEFORE REBOOT\e[0m"
