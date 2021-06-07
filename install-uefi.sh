@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ln -sf /usr/share/zoneinfo/Brazil/East /etc/localtime
-sudo timedatectl set-ntp true
+timedatectl set-ntp true
 hwclock --systohc
 sed -i '177s/.//' /etc/locale.gen
 sed -i '393s/.//' /etc/locale.gen
