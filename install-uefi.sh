@@ -4,7 +4,7 @@ ln -sf /usr/share/zoneinfo/Brazil/East /etc/localtime
 sudo timedatectl set-ntp true
 hwclock --systohc
 sed -i '177s/.//' /etc/locale.gen
-sed -i '393/.//' /etc/locale.gen
+sed -i '393s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
@@ -69,7 +69,6 @@ systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable libvirtd
 systemctl enable firewalld
-systemctl enable acpid
 
 useradd -m aleosada
 echo aloesada:password | chpasswd
