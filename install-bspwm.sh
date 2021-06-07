@@ -70,11 +70,11 @@ git clone https://github.com/Aleosada/.dotfiles.git $HOME/.dotfiles
 cd $HOME/.dotfiles
 stow -vt ~ git
 stow -vt ~ tmux
-rm ~/.config/bspwm
-rm ~/.config/sxhkd
+rm -rf ~/.config/bspwm
+rm -rf ~/.config/sxhkd
 stow -vt ~ bspwm
 stow -vt ~ bspwm
-rm ~/.config/polybar
+rm -rf ~/.config/polybar
 stow -vt ~ polybar
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
