@@ -39,9 +39,9 @@ npm install -g vim-language-server
 npm install -g yaml-language-server
 
 # Install lua-language-server
-pacman -S ninja
-git clone https://github.com/sumneko/lua-language-server
-cd lua-language-server
+sudo pacman -S ninja
+git clone https://github.com/sumneko/lua-language-server ~/Downloads/lua-language-server
+cd ~/Download/lua-language-server
 git submodule update --init --recursive
 cd 3rd/luamake
 compile/install.sh
@@ -50,8 +50,9 @@ cd ../..
 
 # Install dotnet and OmniSharp
 curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --install-dir /opt/dotnet -channel Current -version latest
-yay -S --noconfirm omnisharp-roslyn
+yay -S --noconfirm omnisharp-roslyn-bin
 
+# Install docker
 yay -S --noconfirm docker
 sudo systemctl enable docker
 sudo usermod -a -G docker aleosada
