@@ -76,6 +76,8 @@ usermod -aG libvirt aleosada
 
 echo "aleosada ALL=(ALL) ALL" >> /etc/sudoers.d/aleosada
 
-printf "\e[1;32mInclude nvidia plugin and run mkinitcpio again"
+sed -i '7s/()/(nvidia)/' /etc/mkinitcpio.conf
+mkinitcpio -p linux
+
 printf "\e[1;32mchange password for root and aleosada\n"
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
