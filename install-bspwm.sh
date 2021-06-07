@@ -9,7 +9,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
 
-yay -S --noconfirm lightdm-settings
+# yay -S --noconfirm lightdm-settings
 yay -S --noconfirm polybar
 yay -S --noconfirm nerd-fonts-iosevka
 yay -S --noconfirm ttf-icomoon-feather
