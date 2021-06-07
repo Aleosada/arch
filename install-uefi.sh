@@ -71,10 +71,11 @@ systemctl enable libvirtd
 systemctl enable firewalld
 
 useradd -m aleosada
-echo aloesada:password | chpasswd
+echo aleosada:password | chpasswd
 usermod -aG libvirt aleosada
 
 echo "aleosada ALL=(ALL) ALL" >> /etc/sudoers.d/aleosada
 
-printf "change password for root and aleosada\n"
+printf "\e[1;32mInclude nvidia plugin and run mkinitcpio again"
+printf "\e[1;32mchange password for root and aleosada\n"
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
