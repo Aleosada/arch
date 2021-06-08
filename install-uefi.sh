@@ -55,7 +55,8 @@ pacman -S --noconfirm grub \
     broadcom-wl \
     zsh \
     tmux \
-    stow
+    stow \
+    tree
 
 # pacman -S --noconfirm xf86-video-amdgpu
 pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
