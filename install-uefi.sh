@@ -43,6 +43,7 @@ pacman -S --noconfirm grub \
     virt-manager \
     qemu \
     qemu-arch-extra \
+    edk2-ovmf \
     bridge-utils \
     vde2 \
     openbsd-netcat \
