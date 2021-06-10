@@ -60,6 +60,8 @@ pacman -S --noconfirm grub \
     stow \
     tree
 
+pacman -S ebtables
+
 # pacman -S --noconfirm xf86-video-amdgpu
 pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 
