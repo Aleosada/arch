@@ -28,6 +28,8 @@ npm install -g typescript typescript-language-server
 npm install -g vim-language-server
 npm install -g yaml-language-server
 
+yay -S --noconfirm terraform terraform-ls
+
 # Install lua-language-server
 sudo pacman -S --noconfirm ninja
 git clone https://github.com/sumneko/lua-language-server ~/Downloads/lua-language-server
