@@ -6,6 +6,9 @@ stow -vt ~ nvim
 # Install Deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
+# Install Github cli
+yay -S --noconfirm github-cli
+
 # Install GoLang
 yay -S --noconfirm go
 go get github.com/mattn/efm-langserver
