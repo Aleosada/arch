@@ -58,7 +58,8 @@ pacman -S --noconfirm grub \
     zsh \
     tmux \
     stow \
-    tree
+    tree \
+    pass
 
 pacman -S ebtables
 
