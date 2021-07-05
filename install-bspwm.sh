@@ -21,7 +21,7 @@ yay -S --noconfirm nerd-fonts-iosevka
 yay -S --noconfirm ttf-icomoon-feather
 yay -S --noconfirm spotify
 yay -S --noconfirm authy
-yay -S --noconfirm neovim-nightly-bin xclip python-pynvim-git
+yay -S --noconfirm neovim xclip python-pynvim-git
 
 echo "MAIN PACKAGES"
 
