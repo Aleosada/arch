@@ -6,6 +6,9 @@ stow -vt ~ nvim
 # Install Deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
+# Install postman
+yay -S --noconfirm postman-bin
+
 # Install Github cli
 yay -S --noconfirm github-cli
 
