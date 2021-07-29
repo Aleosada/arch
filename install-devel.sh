@@ -23,11 +23,9 @@ nvm install --lts
 
 npm install -g @angular/language-server
 npm i -g bash-language-server
-npm install -g vscode-css-languageserver-bin
 npm install -g dockerfile-language-server-nodejs
 npm install -g graphql-language-service-cli
-npm install -g vscode-html-languageserver-bin
-npm install -g vscode-json-languageserver
+npm i -g vscode-langservers-extracted
 npm install -g pyright
 npm i -g sql-language-server
 npm install -g typescript typescript-language-server
