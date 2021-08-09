@@ -34,6 +34,7 @@ pacman -S --noconfirm grub \
     nfs-utils \
     inetutils \
     dnsutils \
+    inetutils \
     alsa-utils \
     bash-completion \
     openssh \
