@@ -18,6 +18,10 @@ yay -S --noconfirm github-cli
 yay -S --noconfirm go
 go get github.com/mattn/efm-langserver
 
+# GoPls
+# https://github.com/golang/tools/tree/master/gopls
+GO111MODULE=on go get golang.org/x/tools/gopls@latest
+
 # Install NodeJS
 yay -S --noconfirm nvm
 source /usr/share/nvm/init-nvm.sh
