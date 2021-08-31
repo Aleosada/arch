@@ -58,3 +58,9 @@ yay -S --noconfirm omnisharp-roslyn-bin
 yay -S --noconfirm docker
 sudo systemctl enable docker
 sudo usermod -a -G docker aleosada
+
+
+# Install AWS Tools
+yay -S --noconfirm aws-cli-v2-bin
+yay -S --noconfirm aws-sam
+
