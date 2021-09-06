@@ -64,3 +64,5 @@ sudo usermod -a -G docker aleosada
 yay -S --noconfirm aws-cli-v2-bin
 yay -S --noconfirm aws-sam
 
+# Install Protocol Buffer tool
+yay -S --noconfirm protobuf-c
