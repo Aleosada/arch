@@ -66,3 +66,6 @@ yay -S --noconfirm aws-sam
 
 # Install Protocol Buffer tool
 yay -S --noconfirm protobuf-c
+
+# Install mysql workbench
+yay -S --noconfirm mysql-workbench
