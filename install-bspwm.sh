@@ -34,6 +34,7 @@ sudo pacman -S --noconfirm xorg \
     bspwm \
     sxhkd \
     firefox \
+    vivaldi \
     alacritty \
     picom \
     nitrogen \
