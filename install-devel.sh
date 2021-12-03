@@ -69,3 +69,7 @@ yay -S --noconfirm protobuf-c
 
 # Install mysql workbench
 yay -S --noconfirm mysql-workbench
+
+# Install ganache for solidity development
+yay -S --noconfirm ganache-bin
+yay -S --noconfirm ganache-cli
